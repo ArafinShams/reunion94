@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% block head_title %} Reunion'94 - Registred Details {% endblock head_title %}
+{% block content %}
+{% load static %}
+
+ <!-- Page Content -->
+    <div class="container">     
+        <!-- Page Heading/Breadcrumbs -->
+<!--
+        <h1 class="mt-4 mb-3">Registration 
+ <small>Details</small></h1>
+ -->
+ 	    <h3 class="mt-4 mb-3">Registration <small>Details</small></h3>
+        <ol class="breadcrumb mt-2 mb-2">
+            <li class="breadcrumb-item">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'resistredlist' %}">Registred List</a>
+            </li>
+            <li class="breadcrumb-item active">Registration Details</li>
+        </ol>
+        <div class="row mb-3">
+        <div class="col-md-6 offset-md-3">
+            <h4 class="font-weight-bold text-center">Registration Details</h4>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <p><b>Venue:</b>  Garib-e-NewazHigh School</p>
+        </div>
+        <div class="col-md-4 offset-md-4">
+            <p><b>Date:</b> 29th December, 2017</p>
+        </div>
+    </div>
+        <div class="row">
+                    <div class="form-group col-md-4">
+                        <p><b>Reg No:</b>{{ object.registrationaddress.registrationpersonal.id}}</p>
+                    </div>
+                    
+                    <div class="form-group col-md-4 offset-md-4">
+                        <p><b>Reg date:</b> {{ object.registrationaddress.registrationpersonal.timestamp }}</p>
+                    </div>
+        </div>
+<!-- row ends Name and Spouse Name -->
+        <div class="row">
+                    <div class="form-group col-md-4 offset-md-4 mb-4">
+                    <img src="{{ object.registrationaddress.registrationpersonal.image.url }}" class="rounded img-fluid" style="width:200 em; height: 200 em" alt="User Image">
+                    </div>
+        </div>
+<!-- row ends Name and Spouse Name -->
+        <div class="row">
+                   <div class="form-group col-md-5">
+                        <p><b>Name :</b> {{ object.registrationaddress.registrationpersonal.name}} </p>
+                    </div>   
+
+                    <div class="form-group col-md-4">
+                        <p><b>Spous :</b> {{ object.registrationaddress.registrationpersonal.spousname}} </p>
+                    </div>   
+            <div class="form-group col-md-3">
+                        <p><b>Gender :</b> {{ object.registrationaddress.registrationpersonal.gender}} </p>
+                    </div>   
+        </div>
+<!-- row strts Kids, mobile no and email -->
+                
+        <div class="row">
+                   <div class="form-group col-md-2">
+                        <p><b>Kids :</b> {{ object.registrationaddress.registrationpersonal.kids}} </p>
+                    </div>   
+
+                    <div class="form-group col-md-4">
+                        <p><b>Mobile No :</b> {{ object.registrationaddress.registrationpersonal.mobilenumber}} </p>
+                    </div>   
+            <div class="form-group col-md-6">
+                        <p><b>E-mail :</b> {{ object.registrationaddress.registrationpersonal.email}} </p>
+                    </div>   
+        </div>
+<!-- row ends Kids, mobile no and email -->
+
+<!-- row Starts Blood Group Profession and Organizations -->
+        <div class="row"> 
+                    <div class="form-group col-md-3">
+                        <p><b>Blood group :</b> {{ object.registrationaddress.registrationpersonal.bloodgroup}} </p>
+                    </div>  
+                    <div class="form-group col-md-5">
+                        <p><b>Profession :</b> {{ object.registrationaddress.registrationpersonal.profession}} </p>
+                    </div>  
+
+                    <div class="form-group col-md-4">
+                        <p><b>Organization :</b> {{ object.registrationaddress.registrationpersonal.organization}} </p>
+                    </div>  
+        </div>
+
+           
+<!-- row Starts Blood Group Profession and Organizations -->
+<!-- row Starts Address and Post Code -->
+        <div class="row">
+                       <div class="form-group col-md-8">
+                        <p><b>Address :</b> {{ object.registrationaddress.address}} </p>
+                        </div>
+                       <div class="form-group col-md-3">
+                        <p><b>Post Code :</b> {{ object.registrationaddress.postcode}} </p>
+                        </div>
+        </div>
+<!-- row Ends Address and Post Code -->
+
+<!-- row Starts Thana, District and Division -->
+        <div class="row">            
+                    <div class="form-group col-md-5">
+                        <p><b>Upozila :</b> {{ object.registrationaddress.thana}} </p>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <p><b>District :</b> {{ object.registrationaddress.district}} </p>
+                    </div>
+
+                      <div class="form-group col-md-3">
+                        <p><b>Division :</b> {{ object.registrationaddress.division }} </p>
+                    </div>
+        </div>
+<!-- row Ends Thana, District and Division -->
+
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered">
+                                <thead class="thead-inverse " >
+                                        <tr >
+                                            <th class="text-center">Mate</th>
+                                            <th class="text-center">Spous</th>
+                                            <th class="text-center">Guests</th>
+                                            <th class="text-center">Kids</th>
+                                            <th class="text-center">Others</th>
+                                            <th class="text-center"> Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td> {{ object.registrationaddress.mate}} </td>
+                                            <td> {{ object.registrationaddress.spous}} </td>
+                                            <td> {{ object.registrationaddress.kids}} </td>
+                                            <td> {{ object.registrationaddress.guests}} </td>
+                                            <td> {{ object.registrationaddress.others}} </td>
+                                            <td>BDT. {{ object.registrationaddress.total}} </td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+        </div>
+            <!-- /.row -->
+<!-- Payment Table Started-->
+
+
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered">
+                                <thead class="thead-inverse " >
+                                        <tr >
+                                            <th class="text-center">Payable Amount</th>
+                                            <th class="text-center">Paid Amount</th>
+                                            <th class="text-center">Payment Method</th>
+                                            <th class="text-center">Payment Details</th>
+                                            <th class="text-center">Remarks</th>   
+                                            <th class="text-center">Add Payment</th>                                      
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td> {{ object.payableamount}} </td>
+                                            <td> {{ object.paidamount}} </td>
+                                            <td> {{ object.method}} </td>
+                                            <td> {{ object.details}} </td>
+                                            <td> {{ object.remarks}} </td>
+                                            <td> 
+
+                                                <a href="payment" class="btn btn-success btn-sm" role="button" ><!-- <i class="fa fa-plus" aria-hidden="true"></i>  --><i class="fa fa-credit-card" aria-hidden="true"></i>  Payment</a> </td>
+                                 
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+        </div>
+            <!-- /.row -->
+
+
+
+<!-- Payment Table Ends-->
+<!--             <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Print</button>
+            </div> -->
+</div>
+    <!-- /.container -->
+<!--Page content Ends-->
+
+
+{% endblock content %}

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block head_title %} Reunion'94 - Registration {% endblock head_title %}
+{% block content %}
+{% load static %}
+    
+    <!-- Page Content -->
+    <div class="container">		
+        <!-- Page Heading/Breadcrumbs -->
+
+        <h1 class="mt-4 mb-3">Registration <small>Form</small></h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Registration Form</li>
+        </ol>
+
+    <div class="row breadcrumb bg-primary text-white ">
+	    <div class="col-md-6 offset-md-3 ">
+	    	<h1 align="center">Registration Form</h1>
+	    </div>
+    </div>
+
+    <div class="row">
+	    <div class="col-md-5">
+	    	<h5>Venue: Garib-e-NewazHigh School</h5>
+	    </div>
+	    <div class="col-md-5 offset-md-2">
+	    	<h5>Date: 29th December, 2017</h5>
+	    </div>
+    </div>
+<!-- Form Start -->
+<form method="post" enctype="multipart/form-data" >{% csrf_token %}
+
+		{% include 'registrations/reg_form_template.html' %}
+
+{% if per_errors or add_errors or pay_errors %}
+<div class="form-group">
+	<h5 class="alert-danger">Errors</h5>
+
+
+
+	{% for per in per_errors %}
+	<div class="alert alert-danger" role="alert">
+  	<strong>{{ per }}</strong> Change a few things up and try submitting again.
+	</div>
+	{% endfor %}
+
+	{% for add in add_errors %}
+	<div class="alert alert-danger" role="alert">
+  	<strong>{{ add }}</strong> Change a few things up and try submitting again.
+	</div>
+	{% endfor %}
+
+
+	{% for pay in pay_errors %}
+	<div class="alert alert-danger" role="alert">
+  	<strong>{{ pay }}</strong> Change a few things up and try submitting again.
+	</div>
+	{% endfor %}
+
+
+</div>
+{% endif %}
+<!-- 
+
+
+{% if add_errors %}
+<div class="form-group">
+<div class="list-group-item-danger">
+	{{ add_errors }}
+</div>
+</div>
+{% endif %}
+
+{% if add_errors %}
+<div class="form-group">
+	<h5>Errors</h5>
+	{% for add in add_errors %}
+<div class="list-group-item-danger">
+		{{ add|escape }}
+</div>
+	{% endfor %}
+</div>
+{% endif %}
+
+{% if pay_errors %}
+<div class="form-group">
+	{% for pay in pay_errors %}
+	<span class = "Text-danger small"> {{ pay }} </span>
+	{% endfor %}
+	</div>
+{% endif %}	
+ -->
+
+			
+
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+					
+	</form>
+
+    </div>
+    <!-- /.container -->
+<!--Page content Ends-->
+{% endblock content %}

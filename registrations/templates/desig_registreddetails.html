@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block head_title %} Reunion'94 - Registred Details {% endblock head_title %}
+{% block content %}
+{% load static %}
+
+ <!-- Page Content -->
+    <div class="container">     
+        <!-- Page Heading/Breadcrumbs -->
+<!--
+        <h1 class="mt-4 mb-3">Registration 
+ <small>Details</small></h1>
+ -->
+ 	    <h1 class="mt-4 mb-3">Registred <small>Details</small></h1>
+        <ol class="breadcrumb mt-2 mb-2">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Registration Details</li>
+        </ol>
+        <div class="row mb-3">
+        <div class="col-md-6 offset-md-3">
+            <h4 class="font-weight-bold text-center">Registration Details</h4>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <p><b>Venue:</b>  Garib-e-NewazHigh School</p>
+        </div>
+        <div class="col-md-4 offset-md-4">
+            <p><b>Date:</b> 29th December, 2017</p>
+        </div>
+    </div>
+        <div class="row">
+                    <div class="form-group col-md-4">
+                        <p><b>Reg No:</b> number</p>
+                    </div>
+                    
+                    <div class="form-group col-md-4 offset-md-4">
+                        <p><b>Reg date:</b> date created at </p>
+                    </div>
+        </div>
+<!-- row ends Name and Spouse Name -->
+        <div class="row">
+                    <div class="form-group col-md-4 offset-md-4 mb-4">
+                    <img src="" class="rounded img-fluid" style="width:200 em; height: 200 em" alt="User Image">
+                    </div>
+        </div>
+<!-- row ends Name and Spouse Name -->
+        <div class="row">
+                   <div class="form-group col-md-5">
+                        <p><b>Name :</b> Name </p>
+                    </div>   
+
+                    <div class="form-group col-md-4">
+                        <p><b>Spous :</b> spous </p>
+                    </div>   
+            <div class="form-group col-md-3">
+                        <p><b>Gender :</b> gender </p>
+                    </div>   
+        </div>
+<!-- row strts Kids, mobile no and email -->
+                
+        <div class="row">
+                   <div class="form-group col-md-2">
+                        <p><b>Kids :</b> kids </p>
+                    </div>   
+
+                    <div class="form-group col-md-4">
+                        <p><b>Mobile No :</b> mobile number </p>
+                    </div>   
+            <div class="form-group col-md-6">
+                        <p><b>E-mail :</b> email address </p>
+                    </div>   
+        </div>
+<!-- row ends Kids, mobile no and email -->
+
+<!-- row Starts Blood Group Profession and Organizations -->
+        <div class="row"> 
+                    <div class="form-group col-md-3">
+                        <p><b>Blood group :</b> blood group </p>
+                    </div>  
+                    <div class="form-group col-md-5">
+                        <p><b>Profession :</b> profession </p>
+                    </div>  
+
+                    <div class="form-group col-md-4">
+                        <p><b>Organization :</b> organization </p>
+                    </div>  
+        </div>
+
+           
+<!-- row Starts Blood Group Profession and Organizations -->
+<!-- row Starts Address and Post Code -->
+        <div class="row">
+                       <div class="form-group col-md-8">
+                        <p><b>Address :</b> address </p>
+                        </div>
+                       <div class="form-group col-md-3">
+                        <p><b>Post Code :</b> post code </p>
+                        </div>
+        </div>
+<!-- row Ends Address and Post Code -->
+
+<!-- row Starts Thana, District and Division -->
+        <div class="row">            
+                    <div class="form-group col-md-5">
+                        <p><b>Upozila :</b> thana </p>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <p><b>District :</b> district </p>
+                    </div>
+
+                      <div class="form-group col-md-3">
+                        <p><b>Division :</b> division </p>
+                    </div>
+        </div>
+<!-- row Ends Thana, District and Division -->
+
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered">
+                                <thead class="thead-inverse " >
+                                        <tr >
+                                            <th class="text-center">Mate</th>
+                                            <th class="text-center">Spous</th>
+                                            <th class="text-center">Guests</th>
+                                            <th class="text-center">Kids</th>
+                                            <th class="text-center">Others</th>
+                                            <th class="text-center"> Total</th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td>mate</td>
+                                            <td>spous</td>
+                                            <td>guests</td>
+                                            <td>kids</td>
+                                            <td>others</td>
+                                            <td>BDT. total</td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+        </div>
+            <!-- /.row -->
+            <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Print</button>
+            </div>
+
+</div>
+    <!-- /.container -->
+<!--Page content Ends-->
+
+
+{% endblock content %}

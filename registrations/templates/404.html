@@ -1,0 +1,40 @@
+{% extends "base_nonav.html" %} 
+{% block head_title %} Reunion'94 - 404 Error !! {% endblock head_title %}
+{% block content %}
+{% load static %}
+<!-- The home section starts from here
+ -->
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <h1 class="mt-4 mb-3">404 <small>Error !!!</small></h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">404 Error !!!</li>
+        </ol>
+
+
+
+    <div class="row text-danger">
+        <div class="col-md-6 offset-md-3">
+            <div class="error-template mt-4 mb-4">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    404 Not Found</h2>
+                <div class="error-details  mt-4 mb-4">
+                    Sorry, an error has occured, Requested page not found!
+                </div>
+                <div class="error-actions  mt-4 mb-4">
+                            <a href="{% url 'registration' %}" class="btn btn-success"><i class="fa fa-home" aria-hidden="true"></i> Return Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- /.container -->
+
+{% endblock content %}

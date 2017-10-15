@@ -1,0 +1,309 @@
+{% extends "base.html" %}
+{% block head_title %} Reunion'94 - Registration {% endblock head_title %}
+{% block content %}
+{% load static %}
+    
+    <!-- Page Content -->
+    <div class="container">		
+        <!-- Page Heading/Breadcrumbs -->
+
+        <h1 class="mt-4 mb-3">Registration <small>Form</small></h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Registration Form</li>
+        </ol>
+
+    <div class="row breadcrumb bg-primary text-white ">
+	    <div class="col-md-6 offset-md-3 ">
+	    	<h1 align="center">Registration Form</h1>
+	    </div>
+    </div>
+
+    <div class="row">
+	    <div class="col-md-5">
+	    	<h5>Venue: Garib-e-NewazHigh School</h5>
+	    </div>
+	    <div class="col-md-5 offset-md-2">
+	    	<h5>Date: 29th December, 2017</h5>
+	    </div>
+    </div>
+
+<form   action="/registration/register" method="POST" >
+<div class="breadcrumb">
+			    <h5 class="mb-0">
+			        	Persona Informations:
+				</h5>
+				</div>
+
+<div class="container breadcrumb">
+			<input type="hidden" class="form-control" name="_token"  />
+
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="personal_name">Name:</label>
+						<input type="text" class="form-control" id="personal_name" name="personal_name" placeholder="John Doe"required="true" />
+					</div>
+					
+					<div class="form-group col-md-6">
+						<label for="personal_spouse_name">Spous Name:</label>
+						<input type="text" class="form-control" id="personal_spouse_name" placeholder="Jane Doe" name="personal_spouse_name" />
+					</div>
+				</div>
+<!-- row ends Name and Spouse Name  -->
+<!-- row strts Kids, mobile no and email
+ -->				
+				<div class="row">	
+					<div class="form-group col-md-2 ">
+							<label for="personal_gender">Gender:</label>
+							<select  id="personal_gender" name="personal_gender" class="form-control" >
+						
+							    <option value="Male">Male</option>
+							    <option value="Female">Female</option>
+							</select>
+						</div>
+
+
+					<div class="form-group col-md-2">
+							<label for="personal_kids_no">Kids:</label>
+							<input type="number" value="0" class="form-control" id="personal_kids_no" name="personal_kids_no"/>
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="mobile">Mobile Number:</label>
+						<input type="text"  class="form-control" id="mobile" name="mobile" placeholder="01712345678" required="true" />
+					</div>
+					
+					<div class="form-group col-md-4">
+						<label for="personal_email">E-mail address:</label>
+						<input type="email" class="form-control" id="personal_email" name="personal_email" placeholder="john@example.com"/>
+					</div>
+				</div>
+<!-- row ends Kids, mobile no and email
+ -->
+<!-- row Starts Blood Group Profession and Organizations
+ -->				<div class="row">
+					<div class="form-group col-md-4 ">
+							<label for="personal_blood_group">Blood Group:</label>
+							<select  id="personal_blood_group" name="personal_blood_group" class="form-control">
+							    <option value="A+">A +ve</option>
+							    <option value="B+">B +ve</option>
+							    <option value="O+">O +ve</option>
+							    <option value="AB+">AB +ve</option>
+							    <option value="A-">A -ve</option>
+								<option value="B-">B -ve</option>
+								<option value="O-">O -ve</option>
+								<option value="AB-">AB -ve</option>
+							</select>
+						</div>
+
+					<div class="form-group col-md-4">
+						<label for="personal_profession">Profession:</label>
+						<input type="text" class="form-control" id="personal_profession" name="personal_profession" placeholder="Doctor, Engineer" required="true" />
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="personal_organization">Organization:</label>
+						<input type="text" class="form-control" id="personal_organization" name="personal_organization"/>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-md-4">
+					    <label for="personal_image">Upload Image:</label>
+					    <input type="file" class="form-control-file" name="personal_image" id="personal_image" aria-describedby="fileHelp" accept="image/*" >
+					    <small id="fileHelp" class="form-text text-muted">Upload and image and it's must.</small>
+			     	</div>
+		     	</div>
+</div>		     	
+<!-- row Starts Blood Group Profession and Organizations
+ -->
+				    <h5 class="mb-0">
+				    <hr>
+						Address:
+						<hr>
+				    </h5>
+<div class="container breadcrumb">
+<!-- row Starts Address and Post Code
+ -->					<div class="row">
+						<div class="form-group col-md-8">
+							<label for="address_home">Address:</label>
+							<input type="text" class="form-control" id="address_home" name="address_home" required />
+						</div>
+
+						<div class="form-group col-md-4">
+							<label for="address_postcode">Post Code:</label>
+							<input type="number" value="1000" class="form-control" id="address_postcode" name="address_postcode" />
+						</div>
+					</div>
+<!-- row Ends Address and Post Code
+ -->
+<!-- row Starts Thana, District and Division
+ -->					<div class="row">				
+						<div class="form-group col-md-4">
+							<label for="address_thana">Thana/Upozila:</label>
+							<input type="text" class="form-control" id="address_thana" name="address_thana"/>
+						</div>
+				
+						<div class="form-group col-md-4">
+							<label for="address_district">District:</label>
+							<select  id="address_district" name="address_district" class="form-control" >
+								   	<optgroup label="Barisal Division">
+									   	<option value="Barguna">BARGUNA</option>
+										<option value="Barisal">BARISAL</option>
+										<option value="Bhola">BHOLA</option>
+										<option value="Jhalokatt">JHALOKATI</option>
+										<option value="Patuakhali">PATUAKHALI</option>
+										<option value="Pirojpur">PIROJPUR</option>
+          							</optgroup>
+
+          							<optgroup label="Chittagong Division">
+          								<option value="Bandarban">BANDARBAN</option>
+										<option value="Brahmanbaria">BRAHMANBARIA</option>
+										<option value="Chandpur">CHANDPUR</option>
+										<option value="Chittagong">CHITTAGONG</option>
+										<option value="Comilla">COMILLA</option>
+										<option value="Cox'sBazar">COX'S BAZAR</option>
+										<option value="Feni">FENI</option>
+										<option value="Khagrachhari">KHAGRACHHARI</option>
+										<option value="lakshmipur">LAKSHMIPUR</option>
+										<option value="Noakhali">NOAKHALI</option>
+										<option value="Rangamati">RANGAMATI</option>
+          							</optgroup>
+
+          							<optgroup label="Dhaka Division">
+          								<option value="Dhaka">DHAKA</option>
+										<option value="Faridpur">FARIDPUR</option>
+										<option value="Gazipur">GAZIPUR</option>
+										<option value="Gopalganj">GOPALGANJ</option>
+										<option value="Kishoregonj">KISHOREGONJ</option>
+										<option value="Madaripur">MADARIPUR</option>
+										<option value="Manikganj">MANIKGANJ</option>
+										<option value="Munshiganj">MUNSHIGANJ</option>
+										<option value="Narayanganj">NARAYANGANJ</option>
+										<option value="Narsingdi">NARSINGDI</option>
+										<option value="Rajbari">RAJBARI</option>
+										<option value="Shariatpur">SHARIATPUR</option>
+										<option value="Tangail">TANGAIL</option>
+          						</optgroup>
+          						
+          						<optgroup label="Khulna Division">
+          							<option value="Bagerhat">BAGERHAT</option>
+									<option value="Chuadanga">CHUADANGA</option>
+									<option value="Jessore">JESSORE</option>
+									<option value="Jhenaidah">JHENAIDAH</option>
+									<option value="Khulna">KHULNA</option>
+									<option value="Kushtia">KUSHTIA</option>
+									<option value="Magura">MAGURA</option>
+									<option value="Meherpur">MEHERPUR</option>
+									<option value="Narail">NARAIL</option>
+									<option value="Satkhira">SATKHIRA</option>
+          						</optgroup>
+
+          						<optgroup label="Mymensingh Division">
+								    <option value="Jamalpur">JAMALPUR</option>
+								    <option value="Mymensingh">MYMENSINGH</option>
+								    <option value="Netrokona">NETRAKONA</option>
+								    <option value="Sherpur">SHERPUR</option>
+							    </optgroup>
+
+
+          						<optgroup label="Rajshahi Division">
+          							<option value="Bogra">BOGRA</option>
+									<option value="Chapainababganj">CHAPAINABABGANJ</option>
+									<option value="Joypurhat">JOYPURHAT</option>
+									<option value="Pabna">PABNA</option>
+									<option value="Naogaon">NAOGAON</option>
+									<option value="Nator">NATORE</option>
+									<option value="Rajshahi">RAJSHAHI</option>
+									<option value="Sirajganj">SIRAJGANJ</option>
+          						</optgroup>
+
+          						<optgroup label="Rangpur Division">
+          							<option value="Dinajpur">DINAJPUR</option>
+									<option value="Gaibandha">GAIBANDHA</option>
+									<option value="Kurigram">KURIGRAM</option>
+									<option value="Lalmonirhat">LALMONIRHAT</option>
+									<option value="Nilphamari">NILPHAMARI</option>
+									<option value="Panchagarh">PANCHAGARH</option>
+									<option value="Rangpur">RANGPUR</option>
+									<option value="Thakurgaon">THAKURGAON</option>
+          						</optgroup>
+
+          						<optgroup label="Sylhet Division">
+          							<option value="Habiganj">HABIGANJ</option>
+									<option value="Maulvibazar">MAULVIBAZAR</option>
+									<option value="Sunamganj">SUNAMGANJ</option>
+									<option value="Sylhet">SYLHET</option>
+          						</optgroup>
+							</select>
+						</div>
+						
+						<div class="form-group col-md-4">
+							<label for="address_division">Division:</label>
+							<select  id="address_division" name="address_division" class="form-control">
+							    <option value="Barisal">Barisal</option>
+							    <option value="Chittagong">Chittagong</option>
+							    <option value="Dhaka">Dhaka</option>
+							    <option value="Khulna">Khulna</option>
+							    <option value="Mymensingh">Mymensingh</option>
+								<option value="Rajshahi">Rajshahi</option>
+								<option value="Rangpur">Rangpur</option>
+								<option value="Sylhet">Sylhet</option>
+							</select>
+						</div>
+					</div>
+<!-- row Ends Thana, District and Division
+ --></div>
+
+<div class="container breadcrumb">
+			    	<h5 class="mb-0">
+			    	<hr>
+			    		No. of Perticipents:
+			    		<hr>
+			    	</h5>
+
+<!-- row Starts Mate , Spouse and Kids
+ -->					<div class="row">						
+						<div class="form-group col-md-4">
+						       	<label for="p_mateno">Mate:</label>
+						       	<input type="number" value="1" class="form-control" id="p_mateno" name="p_mateno"/>
+						</div>
+						
+						<div class="form-group col-md-4">
+							<label for="participants_spouse">No. of Spouse:</label>
+							<input type="number" value="0" class="form-control" id="participants_spouse" name="participants_spouse"/>
+						</div>
+
+						<div class="form-group col-md-4">
+							<label for="participants_kids">No. of Kids:</label>
+							<input type="number" value="0"  class="form-control" id="participants_kids" name="participants_kids"/>
+						</div>
+					</div>
+<!-- row Ends Mate , Spouse and Kids
+ -->
+<!-- row Starts Guest and Driver
+ -->				<div class="row">
+					<div class="form-group col-md-4">
+						<label for="participants_guests">No. of Guests:</label>
+						<input type="number"  value="0" class="form-control" id="participants_guests" name="participants_guests"/>
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="participants_driver">No. of Driver/Maid:</label>
+						<input type="number"  value="0" class="form-control" id="participants_driver" name="participants_driver"/>
+					</div>
+				</div>
+<!-- row Ends Guest and Driver
+ -->					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+					
+					</div>
+	</form>
+
+    </div>
+    <!-- /.container -->
+<!--Page content Ends-->
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %} Reunion'94 - Registration {% endblock head_title %}
+{% block content %}
+{% load static %}
+    
+    <!-- Page Content -->
+    <div class="container">		
+        <!-- Page Heading/Breadcrumbs -->
+
+        <h1 class="mt-4 mb-3">Payment <small>Update</small></h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'home' %}">Home</a>
+            </li> <li class="breadcrumb-item">
+                <a href="{% url 'resistredlist' %}">Registred List</a>
+            </li>
+            <li class="breadcrumb-item active">Payment Update</li>
+        </ol>
+
+    <div class="row breadcrumb bg-primary text-white ">
+	    <div class="col-md-6 offset-md-3 ">
+	    	<h1 align="center">Payment Form</h1>
+	    </div>
+    </div>
+
+    <div class="row">
+	    <div class="col-md-5">
+	    	<h5>Venue: Garib-e-NewazHigh School</h5>
+	    </div>
+	    <div class="col-md-5 offset-md-2">
+	    	<h5>Date: 29th December, 2017</h5>
+	    </div>
+    </div>
+<!-- Form Start -->
+<form method="post" enctype="multipart/form-data" >
+	{% csrf_token %}
+		{% include 'forms/form_update_payment.html' %}
+
+<!-- 		{{ form.as_p}} -->
+
+
+
+					<div class="form-group">
+						<button type="submit" class="btn btn btn-success btn-lg"><i class="fa fa-money" aria-hidden="true"></i>
+ Add Payment</button>
+					</div>
+					
+	</form>
+
+    </div>
+    <!-- /.container -->
+<!--Page content Ends-->
+{% endblock content %}

@@ -1,0 +1,240 @@
+{% load crispy_forms_tags %}
+
+<div class="breadcrumb">
+    <h5 class="mb-0 text-primary">Personal Informations:</h5>
+</div>
+<div class="container breadcrumb">
+    <input type="hidden" class="form-control" name="_token" />
+    <div class="row">
+        <div class="form-group col-md-6">
+            {{ personal_form.name|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-6">
+            {{ personal_form.spousname|as_crispy_field:"bootstrap4" }}
+        </div>
+    </div>
+    <!-- row ends Name and Spouse Name  -->
+    <!-- row strts Kids, mobile no and email
+ -->
+    <div class="row">
+        <div class="form-group col-md-2 ">
+            {{ personal_form.gender|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-2">
+            {{ personal_form.kids|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ personal_form.mobilenumber|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ personal_form.email|as_crispy_field:"bootstrap4" }}
+        </div>
+    </div>
+    <!-- row ends Kids, mobile no and email
+ -->
+    <!-- row Starts Blood Group Profession and Organizations
+ -->
+    <!-- Need to add dropdown -->
+    <div class="row">
+        <div class="form-group col-md-4 ">
+            {{ personal_form.bloodgroup|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ personal_form.profession|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ personal_form.organization|as_crispy_field:"bootstrap4" }}
+        </div>
+    </div>
+    <!-- Image upload -->
+     				<div class="row">
+					<div class="form-group col-md-4">
+                        {{ personal_form.image|as_crispy_field:"bootstrap4" }}
+<!-- 					    <label for="personal_image">Upload Image:</label>
+					    <input type="file" class="form-control-file" name="personal_image" id="personal_image" aria-describedby="fileHelp" accept="image/*" >
+					    <small id="fileHelp" class="form-text text-muted">Upload and image and it's must.</small> -->
+			     	</div>
+		     	</div> 
+</div>
+<!-- row Starts Blood Group Profession and Organizations
+ -->
+<div class="breadcrumb">
+    <h5 class="mb-0 text-primary">
+						Address:
+				</h5>
+</div>
+<div class="container breadcrumb">
+    <!-- row Starts Address and Post Code
+ -->
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ address_form.address|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ address_form.postcode|as_crispy_field:"bootstrap4" }}
+        </div>
+    </div>
+    <!-- row Ends Address and Post Code
+ -->
+    <!-- row Starts Thana, District and Division
+ -->
+    <div class="row">
+        <div class="form-group col-md-4">
+            {{ address_form.thana|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ address_form.district|as_crispy_field:"bootstrap4" }}
+            <!-- 	<select  id="address_form.district" name="address_form.district" class="form-control" >
+								   	<optgroup label="Barisal Division">
+									   	<option value="Barguna">BARGUNA</option>
+										<option value="Barisal">BARISAL</option>
+										<option value="Bhola">BHOLA</option>
+										<option value="Jhalokatt">JHALOKATI</option>
+										<option value="Patuakhali">PATUAKHALI</option>
+										<option value="Pirojpur">PIROJPUR</option>
+          							</optgroup>
+
+          							<optgroup label="Chittagong Division">
+          								<option value="Bandarban">BANDARBAN</option>
+										<option value="Brahmanbaria">BRAHMANBARIA</option>
+										<option value="Chandpur">CHANDPUR</option>
+										<option value="Chittagong">CHITTAGONG</option>
+										<option value="Comilla">COMILLA</option>
+										<option value="Cox'sBazar">COX'S BAZAR</option>
+										<option value="Feni">FENI</option>
+										<option value="Khagrachhari">KHAGRACHHARI</option>
+										<option value="lakshmipur">LAKSHMIPUR</option>
+										<option value="Noakhali">NOAKHALI</option>
+										<option value="Rangamati">RANGAMATI</option>
+          							</optgroup>
+
+          							<optgroup label="Dhaka Division">
+          								<option value="Dhaka">DHAKA</option>
+										<option value="Faridpur">FARIDPUR</option>
+										<option value="Gazipur">GAZIPUR</option>
+										<option value="Gopalganj">GOPALGANJ</option>
+										<option value="Kishoregonj">KISHOREGONJ</option>
+										<option value="Madaripur">MADARIPUR</option>
+										<option value="Manikganj">MANIKGANJ</option>
+										<option value="Munshiganj">MUNSHIGANJ</option>
+										<option value="Narayanganj">NARAYANGANJ</option>
+										<option value="Narsingdi">NARSINGDI</option>
+										<option value="Rajbari">RAJBARI</option>
+										<option value="Shariatpur">SHARIATPUR</option>
+										<option value="Tangail">TANGAIL</option>
+          						</optgroup>
+          						
+          						<optgroup label="Khulna Division">
+          							<option value="Bagerhat">BAGERHAT</option>
+									<option value="Chuadanga">CHUADANGA</option>
+									<option value="Jessore">JESSORE</option>
+									<option value="Jhenaidah">JHENAIDAH</option>
+									<option value="Khulna">KHULNA</option>
+									<option value="Kushtia">KUSHTIA</option>
+									<option value="Magura">MAGURA</option>
+									<option value="Meherpur">MEHERPUR</option>
+									<option value="Narail">NARAIL</option>
+									<option value="Satkhira">SATKHIRA</option>
+          						</optgroup>
+
+          						<optgroup label="Mymensingh Division">
+								    <option value="Jamalpur">JAMALPUR</option>
+								    <option value="Mymensingh">MYMENSINGH</option>
+								    <option value="Netrokona">NETRAKONA</option>
+								    <option value="Sherpur">SHERPUR</option>
+							    </optgroup>
+
+
+          						<optgroup label="Rajshahi Division">
+          							<option value="Bogra">BOGRA</option>
+									<option value="Chapainababganj">CHAPAINABABGANJ</option>
+									<option value="Joypurhat">JOYPURHAT</option>
+									<option value="Pabna">PABNA</option>
+									<option value="Naogaon">NAOGAON</option>
+									<option value="Nator">NATORE</option>
+									<option value="Rajshahi">RAJSHAHI</option>
+									<option value="Sirajganj">SIRAJGANJ</option>
+          						</optgroup>
+
+          						<optgroup label="Rangpur Division">
+          							<option value="Dinajpur">DINAJPUR</option>
+									<option value="Gaibandha">GAIBANDHA</option>
+									<option value="Kurigram">KURIGRAM</option>
+									<option value="Lalmonirhat">LALMONIRHAT</option>
+									<option value="Nilphamari">NILPHAMARI</option>
+									<option value="Panchagarh">PANCHAGARH</option>
+									<option value="Rangpur">RANGPUR</option>
+									<option value="Thakurgaon">THAKURGAON</option>
+          						</optgroup>
+
+          						<optgroup label="Sylhet Division">
+          							<option value="Habiganj">HABIGANJ</option>
+									<option value="Maulvibazar">MAULVIBAZAR</option>
+									<option value="Sunamganj">SUNAMGANJ</option>
+									<option value="Sylhet">SYLHET</option>
+          						</optgroup>
+							</select> -->
+        </div>
+        <div class="form-group col-md-4">
+            <!-- 				<select  id="address_form.division" name="address_form.division" class="form-control">
+							    <option value="Barisal">Barisal</option>
+							    <option value="Chittagong">Chittagong</option>
+							    <option value="Dhaka">Dhaka</option>
+							    <option value="Khulna">Khulna</option>
+							    <option value="Mymensingh">Mymensingh</option>
+								<option value="Rajshahi">Rajshahi</option>
+								<option value="Rangpur">Rangpur</option>
+								<option value="Sylhet">Sylhet</option>
+							</select>  -->
+            {{ address_form.division|as_crispy_field:"bootstrap4" }}
+        </div>
+    </div>
+    <!-- row Ends Thana, District and Division
+ -->
+</div>
+<div class="container breadcrumb">
+    <h5 class="mb-0 text-primary">
+			    		No. of Perticipents:
+			    	</h5>
+</div>
+<div class="container breadcrumb">
+    <!-- row Starts Mate , Spouse and Kids
+ -->
+    <div class="row">
+        <div class="form-group col-md-4">
+            {{ address_form.mate|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ address_form.spous|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ address_form.kids|as_crispy_field:"bootstrap4" }}
+        </div>
+    </div>
+    <!-- row Ends Mate , Spouse and Kids
+ -->
+    <!-- row Starts Guest and Driver
+ -->
+    <div class="row">
+        <div class="form-group col-md-4">
+            {{ address_form.guests|as_crispy_field:"bootstrap4" }}
+        </div>
+        <div class="form-group col-md-4">
+            {{ address_form.others|as_crispy_field:"bootstrap4" }}
+        </div>
+<!--         <div class="form-group col-md-4">
+        </div> -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+              <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+ Submit</button>
+        </div>
+        </div>
+      
+    </div>
+    <!-- row Ends Guest and Driver
+ -->
+</div>

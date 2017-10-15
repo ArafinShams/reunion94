@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block head_title %} Reunion'94 - Registred List {% endblock head_title %}
+{% block content %}
+{% load static %}
+
+
+<!-- Page Content -->
+ <div class="container">
+ <!-- Page Main Container -->       
+        <!-- Page Heading/Breadcrumbs -->
+
+        <h1 class="mt-4 mb-3">Registered <small>List</small></h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Registered List</li>
+        </ol>
+             <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">
+                            <h4>Registered List</h4>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Reg no.</th>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Blood Group</th>
+                                            <th>Disitrict</th>
+                                            <th>Total</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td></td>
+                                            <td><img src="" alt="User Image" style="width:32px; height: 32px; border-radius: 50% "></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>BDT. </td>
+                                            <td>Pending</td>
+                                            <td><a href="" class="btn btn-outline-success" role="button" >Details</a></td>
+                                        </tr>
+       
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+            <!-- /.row -->
+
+</div>
+ <!-- /.container -->
+<!--Page content Ends-->
+
+{% endblock content %}

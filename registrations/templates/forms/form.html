@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head_title %} Reunion'94 - Registred Details {% endblock head_title %}
+{% block content %}
+{% load static %}
+
+ <!-- Page Content -->
+    <div class="container">     
+        <!-- Page Heading/Breadcrumbs -->
+<!--
+        <h1 class="mt-4 mb-3">Registration 
+ <small>Details</small></h1>
+ -->
+ 	    <h1 class="mt-4 mb-3">Registred <small>Details</small></h1>
+        <ol class="breadcrumb mt-2 mb-2">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Registration Details</li>
+        </ol>
+
+<h1>Registrations</h1>
+{% 	if per_errors or add_errors or pay_errors %}
+	{{ per_errors }}
+	{{ add_errors }}
+	{{ pay_errors }}
+{% endif %}
+<form method="POST">{% csrf_token %}
+
+<!-- {{ personal_form.as_p }} -->
+{{ address_form.as_p }}
+	<!-- <input type='text' name='name' placeholder="">
+	<input type='text' name='spousname' placeholder="">
+	<input type='text' name='gender' placeholder="">
+	<input type='text' name='kids' placeholder="">
+	<input type='text' name='mobilenumber' placeholder="">
+	<input type='text' name='email' placeholder="">
+	<input type='text' name='bloodgroup' placeholder="">
+	<input type='text' name='profession' placeholder="">
+	<input type='text' name='organization' placeholder="">
+ -->
+	<button type="Submit">Register</button>
+</form>
+
+
+
+</div>
+    <!-- /.container -->
+<!--Page content Ends-->
+{% endblock content %}

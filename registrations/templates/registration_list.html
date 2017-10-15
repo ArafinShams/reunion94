@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block head_title %} Reunion'94 - Registred List {% endblock head_title %}
+{% block content %}
+{% load static %}
+
+<!-- Page Content -->
+ <div class="container">
+ <!-- Page Main Container -->       
+        <!-- Page Heading/Breadcrumbs -->
+        <h3 class="mt-4 mb-3">Registered <small>List</small></h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Registered List</li>
+        </ol>
+
+<!-- 
+    <div class="row breadcrumb bg-primary text-white ">
+        <div class="col-md-6 offset-md-3 ">
+            <h1 align="center">Registred List</h1>
+        </div>
+    </div> -->
+             <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">
+                         <!--    <h4>Registered List</h4> -->
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Reg no.</th>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Blood Group</th>
+                                            <th>Disitrict</th>
+                                   <!--          <th>Total</th> -->
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+{% for obj in registered_lists %}
+                                        <tr>
+                                            <td>{{ obj.id }}</td>
+                                            <td><img src="{{ obj.registrationaddress.registrationpersonal.image.url }}" alt="User Image" style="width:32px; height: 32px; border-radius: 50% "></td>
+                                            <td>{{ obj.registrationaddress.registrationpersonal.name }}</td>
+                                            <td>{{obj.registrationaddress.registrationpersonal.bloodgroup}}</td>
+                                            <td>{{ obj.registrationaddress.district }}</td>
+                                            <!--  -->
+                                            <td>{{ obj.status }}</td>
+
+                                            <td><a href="{{ obj.registrationaddress.registrationpersonal.id }}/" class="btn btn-info btn-sm" role="button" ><!-- <i class="fa fa-file-text-o" aria-hidden="true"></i> --><i class="fa fa-list" aria-hidden="true"></i>
+ Details</a>
+                                            <a href="{{ obj.registrationaddress.registrationpersonal.id }}/payment" class="btn btn-success btn-sm" role="button" >
+<i class="fa fa-credit-card" aria-hidden="true"></i> Payment</a>
+
+<!--                                             <i class="fa fa-plus" aria-hidden="true"></i> Payment</a>
+ --><!--  <i class="fa fa-money" aria-hidden="true"></i>
+ Payment</a> -->
+                                            </td>
+                 
+
+                                        </tr>
+{% endfor %}       
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+            <!-- /.row -->
+</div>
+ <!-- /.container -->
+<!--Page content Ends-->
+{% endblock content %}
